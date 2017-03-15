@@ -9,6 +9,10 @@ fi
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
+  # Checkout explicit branch
+  git fetch
+  git checkout master
+
   # Git auth
   git config credential.helper store
   echo "https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
