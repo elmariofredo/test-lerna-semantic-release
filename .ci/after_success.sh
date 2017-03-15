@@ -14,11 +14,11 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git checkout master
 
   # Git auth
-  git config credential.helper store
+  git config --global credential.helper store
   echo "https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
   git remote set-url origin https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
-  git config user.name ${RELEASE_GH_USERNAME}
-  git config user.email ${RELEASE_GH_EMAIL}
+  git config --global user.name ${RELEASE_GH_USERNAME}
+  git config --global user.email ${RELEASE_GH_EMAIL}
 
   # Prevent log warning by explicitly setting push strategy
   git config --global push.default simple
