@@ -1,0 +1,28 @@
+language: java
+sudo: required
+env:
+  - NODE_VERSION=6
+jdk:
+  - oraclejdk8
+addons:
+  firefox: latest
+before_install:
+  - .ci/before_install.sh
+  - nvm install $NODE_VERSION
+  - nvm alias $NODE_VERSION
+  # Repo for newer Node.js versions
+  - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  # Repo for Yarn
+  - travis_retry curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - travis_retry sudo apt-get update
+  - travis_retry sudo apt-get install yarn
+cache:
+  directories:
+  - $HOME/.yarn-cache
+install:
+  - travis_retry yarn
+script:
+  - yarn test
+after_success:
+  - .ci/after_success.sh
