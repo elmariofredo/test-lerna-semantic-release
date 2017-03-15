@@ -21,8 +21,28 @@ Testing repo to verify lerna-semantic-release functionality
 7. login to npm and get token $ `npm login && cat ~/.npmrc` set token to NPM_TOKEN
 8. copy .travis.yml and .ci folder to your project
 
-### Workflow
+### Setup packages
+
+1. create packages under packages directory
+2. set for each scoped package
+```json
+  "publishConfig": {
+    "access": "public"
+  },
+```
+
+### Commit Workflow
 
 1. $ `git add README.md`
 2. $ `git cz`
 3. $ `git commit && git push`
+
+### Initial release
+
+Run manual_release.sh for each package.
+
+```bash
+$ ./manual-release.sh @elmariofredo/test-lerna-semantic-release-p2 patch && \
+./manual-release.sh @elmariofredo/test-lerna-semantic-release-p1 patch && \
+./manual-release.sh @elmariofredo/test-lerna-semantic-release patch
+```
