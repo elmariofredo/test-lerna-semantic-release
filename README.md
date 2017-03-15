@@ -34,7 +34,7 @@ Testing repo to verify lerna-semantic-release functionality
 ### Commit Workflow
 
 1. $ `git add README.md`
-2. $ `git cz`
+2. $ `git cz` !!! if you will get 'error: message=There are no relevant changes, so no new version is released., code=ENOCHANGE' make sure that it match with `/^(\w*)(\(([\w\$\.\-\* ]*)\))?\: (.*)$/` pattern as described here https://github.com/atlassian/lerna-semantic-release/issues/73#issuecomment-286766534
 3. $ `git commit && git push`
 
 ### Initial release
