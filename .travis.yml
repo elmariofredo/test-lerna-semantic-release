@@ -21,7 +21,6 @@ cache:
   - $HOME/.yarn-cache
 install:
   - travis_retry yarn
-before_script: .ci/before_script.sh
 script:
   - yarn test
 after_success: .ci/after_success.sh
