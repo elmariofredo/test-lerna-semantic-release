@@ -10,7 +10,7 @@
     "start": "node ./index.js"
   },
   "dependencies": {
-    "@elmariofredo/test-lerna-semantic-release-p1": "^2.0.0",
+    "@elmariofredo/test-lerna-semantic-release-p1": "^3.0.0",
     "@elmariofredo/test-lerna-semantic-release-p2": "^1.0.0"
   }
 }
