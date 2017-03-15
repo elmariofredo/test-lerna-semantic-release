@@ -25,4 +25,4 @@ Testing repo to verify lerna-semantic-release functionality
 
 1. $ `git add README.md`
 2. $ `git cz`
-3.
+3. $ `git commit && git push`
