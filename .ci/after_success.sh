@@ -12,6 +12,16 @@ if [ "$TRAVIS_BRANCH" != "master" ]; then
   exit 0
 fi
 
+
+[ -z $GH_TOKEN ] && echo "!!!!!! set GH_TOKEN !!!!!!" && exit 1
+[ -z $RELEASE_GH_USERNAME ] && echo "!!!!!! set RELEASE_GH_USERNAME !!!!!!" && exit 1
+[ -z $RELEASE_GH_EMAIL ] && echo "!!!!!! set RELEASE_GH_EMAIL !!!!!!" && exit 1
+[ -z $RELEASE_GH_TOKEN ] && echo "!!!!!! set RELEASE_GH_TOKEN !!!!!!" && exit 1
+
+[ -z $NPM_TOKEN ] && echo "!!!!!! set NPM_TOKEN !!!!!!" && exit 1
+[ -z $NPM_CONFIG_EMAIL ] && echo "!!!!!! set NPM_CONFIG_EMAIL !!!!!!" && exit 1
+[ -z $NPM_CONFIG_USERNAME ] && echo "!!!!!! set NPM_CONFIG_USERNAME !!!!!!" && exit 1
+
 #
 # Prepare git and npm for release
 #
