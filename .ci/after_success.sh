@@ -66,6 +66,8 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
   git config --global user.email "${RELEASE_GH_EMAIL}"
   echo ">>> DONE($?): git config user.email <<<"
 
+  echo ">>> DEBUG: git config --list > $(git config --list)"
+
   # Prevent log warning by explicitly setting push strategy
   echo ">>> START: git config --global push.default simple <<<"
   git config --global push.default simple
@@ -73,8 +75,10 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
 
   # Npm auth
   echo ">>> START: npm config set //registry.npmjs.org/:_authToken=... <<<"
-  npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+  npm config set "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" -q
   echo ">>> DONE($?): npm config set //registry.npmjs.org/:_authToken=... <<<"
+
+  echo ">>> DEBUG: npm whoami > $(npm whoami)"
 
   # Fetch tags
   echo ">>> START: git fetch --tags <<<"
