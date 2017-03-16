@@ -16,7 +16,7 @@
     "build": "echo '<p>Build Passed</p>' > index.html",
     "site": "mkdir -p tmp/site && cp index.html tmp/site",
     "postinstall": "lerna bootstrap",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform"
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post"
   },
   "config": {
     "commitizen": {
