@@ -1,3 +1,3 @@
-const magicP2String = 'pp2';
+const magicP2String = 'ppp2';
 
 exports.default = magicP2String;
