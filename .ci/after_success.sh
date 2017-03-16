@@ -55,7 +55,7 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
   echo ">>> DONE($?): fill ~/.git-credentials <<<"
 
   echo ">>> START: git remote set-url origin <<<"
-  git remote set-url origin https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+  git remote set-url origin https://github.com/${TRAVIS_REPO_SLUG}.git
   echo ">>> DONE($?): git remote set-url origin <<<"
 
   echo ">>> START: git config user.name <<<"
@@ -66,7 +66,7 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
   git config --global user.email "${RELEASE_GH_EMAIL}"
   echo ">>> DONE($?): git config user.email <<<"
 
-  echo ">>> DEBUG: git config --list | grep -v remote.origin.url > $(git config --list | grep -v remote.origin.url)"
+  echo ">>> DEBUG: git config --list > $(git config --list)"
 
   # Prevent log warning by explicitly setting push strategy
   echo ">>> START: git config --global push.default simple <<<"
