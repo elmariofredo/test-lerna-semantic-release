@@ -23,10 +23,14 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
     # Git auth
     git config --global credential.helper store
+    echo "DONE git config --global credential.helper store"
     echo "https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
+    echo "DONE .git-credentials"
     git remote set-url origin https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+    echo "DONE set-url remote"
     git config --global user.name ${RELEASE_GH_USERNAME}
     git config --global user.email ${RELEASE_GH_EMAIL}
+    echo "DONE set config name & email"
 
     # Prevent log warning by explicitly setting push strategy
     git config --global push.default simple
