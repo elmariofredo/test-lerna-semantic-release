@@ -22,6 +22,14 @@ fi
 [ -z $NPM_CONFIG_EMAIL ] && echo "!!!!!! set NPM_CONFIG_EMAIL !!!!!!" && exit 1
 [ -z $NPM_CONFIG_USERNAME ] && echo "!!!!!! set NPM_CONFIG_USERNAME !!!!!!" && exit 1
 
+echo "GH_TOKEN=***${GH_TOKEN: -3} length: ${#GH_TOKEN}"
+echo "RELEASE_GH_USERNAME=${RELEASE_GH_USERNAME}"
+echo "RELEASE_GH_EMAIL=${RELEASE_GH_EMAIL}"
+echo "RELEASE_GH_TOKEN=***${RELEASE_GH_TOKEN: -3} length: ${#RELEASE_GH_TOKEN}"
+echo "NPM_TOKEN=***${NPM_TOKEN: -3} length: ${#NPM_TOKEN}"
+echo "NPM_CONFIG_EMAIL=${NPM_CONFIG_EMAIL}"
+echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
+
 #
 # Prepare git and npm for release
 #

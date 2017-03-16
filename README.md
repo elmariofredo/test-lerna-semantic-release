@@ -61,3 +61,7 @@ $ ./manual-release.sh @elmariofredo/test-lerna-semantic-release-p2 1.0.0 && \
 2. **ERR! commits The commit the last release of this package was derived from is not in the direct history of the "master" branch.**
 
     Check if you have all env variables properly set specially `GH_TOKEN`
+
+3. some other errror
+
+    Check if variables are properly set it will show you set variables at the beggining of `after_success` script with masked sensitive tokens.
