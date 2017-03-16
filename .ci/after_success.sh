@@ -120,12 +120,22 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> START: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
+# lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform
+
+echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
+./node_modules/.bin/lerna-semantic-release pre
+
+echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
+./node_modules/.bin/lerna-semantic-release post
+
+echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
+./node_modules/.bin/lerna-semantic-release perform
 echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
 
 # Release project packages
-echo ">>> START: yarn semantic-release <<<"
-yarn semantic-release
-echo ">>> DONE($?): yarn semantic-release <<<"
+# echo ">>> START: yarn semantic-release <<<"
+# yarn semantic-release
+# echo ">>> DONE($?): yarn semantic-release <<<"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> DONE: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
