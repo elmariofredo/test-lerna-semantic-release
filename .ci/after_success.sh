@@ -29,8 +29,9 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     git remote set-url origin https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
     echo "DONE set-url remote"
     git config user.name ${RELEASE_GH_USERNAME}
+    echo "DONE set config name"
     git config user.email ${RELEASE_GH_EMAIL}
-    echo "SKIPPED set config name & email"
+    echo "DONE set config email"
 
     # Prevent log warning by explicitly setting push strategy
     git config --global push.default simple
