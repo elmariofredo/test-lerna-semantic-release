@@ -28,8 +28,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     echo "DONE .git-credentials"
     git remote set-url origin https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
     echo "DONE set-url remote"
-    git config user.name ${RELEASE_GH_USERNAME}
-    echo "DONE set config name"
+    # git config user.name ${RELEASE_GH_USERNAME}
+    # echo "DONE set config name"
     git config user.email ${RELEASE_GH_EMAIL}
     echo "DONE set config email"
 
