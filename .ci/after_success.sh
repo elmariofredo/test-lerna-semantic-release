@@ -120,6 +120,8 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> START: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
+echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
+
 # Release project packages
 echo ">>> START: yarn semantic-release <<<"
 yarn semantic-release
