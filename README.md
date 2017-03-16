@@ -20,7 +20,7 @@ Testing repo to verify lerna-semantic-release functionality
 5. set `RELEASE_GH_TOKEN` to github personal token created in step 1.
 6. set `NPM_CONFIG_EMAIL` and `NPM_CONFIG_USERNAME`
 7. login to npm and get token $ `npm login && cat ~/.npmrc` set token to `NPM_TOKEN`
-8. copy .travis.yml and .ci folder to your project
+8. copy `./package.json` `./.travis.yml` and `./.ci` folder to your project
 
 
 ### Setup packages
