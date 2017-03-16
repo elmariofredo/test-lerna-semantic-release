@@ -41,11 +41,11 @@ fi
   echo ">>> DONE($?): git remote set-url origin <<<"
 
   echo ">>> START: git config user.name <<<"
-  git config user.name "${RELEASE_GH_USERNAME}"
+  git config --global user.name "${RELEASE_GH_USERNAME}"
   echo ">>> DONE($?): git config user.name <<<"
 
   echo ">>> START: git config user.email <<<"
-  git config user.email "${RELEASE_GH_EMAIL}"
+  git config --global user.email "${RELEASE_GH_EMAIL}"
   echo ">>> DONE($?): git config user.email <<<"
 
   # Prevent log warning by explicitly setting push strategy
