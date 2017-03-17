@@ -134,9 +134,9 @@ echo ">>> START: git add packages/**/CHANGELOG.md"
 git add packages/**/CHANGELOG.md
 echo ">>> DONE($?): git add packages/**/CHANGELOG.md"
 
-echo ">>> START: git commit -a \"chore(project): update all CHANGELOGs\""
-git commit -m "chore(project): update all CHANGELOG files"
-echo ">>> DONE($?): git commit -a \"chore(project): update all CHANGELOGs\""
+echo ">>> START: git commit -m \"chore(changelogs): update all CHANGELOG files\n\n[skip ci]\""
+git commit -m "chore(release): update all CHANGELOG files\n\n[skip ci]"
+echo ">>> DONE($?): git commit -m \"chore(changelogs): update all CHANGELOG files\n\n[skip ci]\""
 
 echo ">>> START: lerna-semantic-release perform > git push origin --tags and npm publish"
 ./node_modules/.bin/lerna-semantic-release perform
