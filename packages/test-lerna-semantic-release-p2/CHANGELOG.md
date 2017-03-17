@@ -92,14 +92,4 @@
 # 2.0.0 (2017-03-16)
 
 
-### Features
-
-* **test-lerna-semantic-release-p2:** add additional 'p' to keepup with p1 package (#2) ([6dbc383](https://github.com/elmariofredo/test-lerna-semantic-release/commit/6dbc383))
-
-
-### BREAKING CHANGES
-
-* **test-lerna-semantic-release-p2:** now we are using 'pp' instead of 'p'
-
-
 
