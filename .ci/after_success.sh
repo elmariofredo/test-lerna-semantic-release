@@ -120,22 +120,21 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> START: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
-# lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform
+# !!! this doesn't work when runing using yarn command !!!
 
-echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
-./node_modules/.bin/lerna-semantic-release pre
+npm run semantic-release
 
-echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
-./node_modules/.bin/lerna-semantic-release post
+# echo ">>> START: analyze commits, set versions and create tags"
+# ./node_modules/.bin/lerna-semantic-release pre
+# echo ">>> DONE($?): analyze commits, set versions and create tags"
 
-echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
-./node_modules/.bin/lerna-semantic-release perform
-echo ">>> DEBUG >>> npm whoami > $(npm whoami)"
+# echo ">>> START: generate CHANGELOG"
+# ./node_modules/.bin/lerna-semantic-release post
+# echo ">>> DONE($?): generate CHANGELOG"
 
-# Release project packages
-# echo ">>> START: yarn semantic-release <<<"
-# yarn semantic-release
-# echo ">>> DONE($?): yarn semantic-release <<<"
+# echo ">>> START: git push origin --tags and npm publish"
+# ./node_modules/.bin/lerna-semantic-release perform
+# echo ">>> DONE($?): git push origin --tags and npm publish"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> DONE: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
