@@ -120,21 +120,19 @@ echo "NPM_CONFIG_USERNAME=${NPM_CONFIG_USERNAME}"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> START: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
-# !!! this doesn't work when runing using yarn command !!!
+# !!! this doesn't work when runing using yarn command see https://github.com/yarnpkg/yarn/issues/2935 !!!
 
-npm run semantic-release
+echo ">>> START: lerna-semantic-release pre > analyze commits, set versions and create tags"
+./node_modules/.bin/lerna-semantic-release pre
+echo ">>> DONE($?): lerna-semantic-release pre > analyze commits, set versions and create tags"
 
-# echo ">>> START: analyze commits, set versions and create tags"
-# ./node_modules/.bin/lerna-semantic-release pre
-# echo ">>> DONE($?): analyze commits, set versions and create tags"
+echo ">>> START: lerna-semantic-release post > generate CHANGELOG"
+./node_modules/.bin/lerna-semantic-release post
+echo ">>> DONE($?): lerna-semantic-release post > generate CHANGELOG"
 
-# echo ">>> START: generate CHANGELOG"
-# ./node_modules/.bin/lerna-semantic-release post
-# echo ">>> DONE($?): generate CHANGELOG"
-
-# echo ">>> START: git push origin --tags and npm publish"
-# ./node_modules/.bin/lerna-semantic-release perform
-# echo ">>> DONE($?): git push origin --tags and npm publish"
+echo ">>> START: lerna-semantic-release perform > git push origin --tags and npm publish"
+./node_modules/.bin/lerna-semantic-release perform
+echo ">>> DONE($?): lerna-semantic-release perform > git push origin --tags and npm publish"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>> DONE: RELEASE <<<<<<<<<<<<<<<<<<<<<<<<<<<"
 

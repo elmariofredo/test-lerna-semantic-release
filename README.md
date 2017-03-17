@@ -62,6 +62,13 @@ $ ./manual-release.sh @elmariofredo/test-lerna-semantic-release-p2 1.0.0 && \
 
     Check if you have all env variables properly set specially `GH_TOKEN`
 
-3. some other errror
+3. **npm ERR! code ENEEDAUTH**
 
-    Check if variables are properly set it will show you set variables at the beggining of `after_success` script with masked sensitive tokens.
+    If you decide to use own CI script make sure that you are not running semantic-release package.json script using yarn command($ `yarn semantic-release`). For some strange reason it won't reach auth information from within yarn subshell
+
+    see issue https://github.com/yarnpkg/yarn/issues/2935
+
+4. some other errror
+
+    Check if variables are properly set, after_succes script will show you variables at the beggining of execution with masked sensitive tokens. For some strange reason it can happen that Travis CI will forgot or simply wont set variables from settings to execution context.
+
