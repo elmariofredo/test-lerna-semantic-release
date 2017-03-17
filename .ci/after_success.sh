@@ -130,6 +130,10 @@ echo ">>> START: lerna-semantic-release post > generate CHANGELOG"
 ./node_modules/.bin/lerna-semantic-release post
 echo ">>> DONE($?): lerna-semantic-release post > generate CHANGELOG"
 
+echo ">>> START: git commit -a \"chore(project): update all CHANGELOGs\""
+git commit -a -m "chore(project): update all CHANGELOG files"
+echo ">>> DONE($?): git commit -a \"chore(project): update all CHANGELOGs\""
+
 echo ">>> START: lerna-semantic-release perform > git push origin --tags and npm publish"
 ./node_modules/.bin/lerna-semantic-release perform
 echo ">>> DONE($?): lerna-semantic-release perform > git push origin --tags and npm publish"
