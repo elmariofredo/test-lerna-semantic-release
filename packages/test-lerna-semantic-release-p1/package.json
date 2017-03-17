@@ -1,6 +1,6 @@
 {
   "name": "@elmariofredo/test-lerna-semantic-release-p1",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
