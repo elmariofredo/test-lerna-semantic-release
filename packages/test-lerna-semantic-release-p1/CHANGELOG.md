@@ -1,5 +1,20 @@
-<a name="5.0.0"></a>
-# 5.0.0 (2017-03-17)
+<a name="6.0.0"></a>
+# 6.0.0 (2017-03-17)
+
+
+
+<a name="6.0.0"></a>
+# 6.0.0 (2017-03-17)
+
+
+### Bug Fixes
+
+* **packages:** test changelog generation ([f9cd471](https://github.com/elmariofredo/test-lerna-semantic-release/commit/f9cd471))
+
+
+### BREAKING CHANGES
+
+* **packages:** now we are on five 'p' for all packages
 
 
 
@@ -15,11 +30,6 @@
 ### BREAKING CHANGES
 
 * **test-lerna-semantic-release-p1:** triple p
-
-
-
-<a name="4.0.0"></a>
-# 4.0.0 (2017-03-15)
 
 
 
